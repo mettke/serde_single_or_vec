@@ -638,4 +638,13 @@ mod tests {
         );
         single!(SingleOrVec<'_, &str>, SingleOrVec::new(vec!["a"]), "\"a\"");
     }
+
+    #[test]
+    fn empty() {
+        single!(
+            SingleOrVec<'_, &str>,
+            SingleOrVec::new(vec![]),
+            "[]"
+        );
+    }
 }
