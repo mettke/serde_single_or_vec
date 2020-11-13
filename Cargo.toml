@@ -1,0 +1,25 @@
+[package]
+name = "serde_single_or_vec"
+version = "1.0.0"
+authors = ["Marc Mettke <marc@itmettke.de>"]
+edition = "2018"
+description = "Type which can be deserialized from either a sequence or a single value"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/mettke/serde_single_or_vec"
+readme = "README.md"
+keywords = ["serde", "vec", "single"]
+categories = ["data-structures"]
+
+[features]
+default = ["std"]
+
+# Like serde either std or alloc is required
+std = ["serde/std", "serde_json/std"]
+alloc = ["serde/alloc", "serde_json/alloc"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"], default-features = false }
+
+[dev-dependencies]
+arrayvec = { version = "0.5", features = ["serde"], default-features = false }
+serde_json = { version = "1.0", default-features = false }
