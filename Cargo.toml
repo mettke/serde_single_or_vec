@@ -1,6 +1,6 @@
 [package]
 name = "serde_single_or_vec"
-version = "1.0.0"
+version = "1.0.1"
 authors = ["Marc Mettke <marc@itmettke.de>"]
 edition = "2018"
 description = "Type which can be deserialized from either a sequence or a single value"
@@ -14,12 +14,12 @@ categories = ["data-structures"]
 default = ["std"]
 
 # Like serde either std or alloc is required
-std = ["serde/std", "serde_json/std"]
-alloc = ["serde/alloc", "serde_json/alloc"]
+std = ["serde/std"]
+alloc = ["serde/alloc"]
 
 [dependencies]
 serde = { version = "1.0", features = ["derive"], default-features = false }
 
 [dev-dependencies]
 arrayvec = { version = "0.5", features = ["serde"], default-features = false }
-serde_json = { version = "1.0", default-features = false }
+serde_json = { version = "1.0" }
